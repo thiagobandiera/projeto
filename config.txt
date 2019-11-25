@@ -1,0 +1,18 @@
+clone do repository "git clone https://github.com/thiagobandiera/projeto.git"
+
+update da pasta vendor "Composer update"
+
+criar arquivo . "envenv.example -> env"
+
+criar database "sistema_financeiro"
+
+configura a conexão como banco no arquivo .env
+
+rodar migrate "php artisan migrate"
+
+rodar seed "php artisan db:seed"
+
+usuario:
+	adm@adm.com     | 123
+	usuario@usuario | 123
+
