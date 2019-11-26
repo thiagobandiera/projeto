@@ -27,6 +27,7 @@
                             <tr>
                                 <th>Nome</th>
                                 <th>Saldo Incial</th>
+                                <th>Saldo Atual</th>
                                 <th>Criado</th>
                                 <th></th>
                             </tr>
@@ -36,6 +37,7 @@
                             <tr>
                                 <td>{{ $conta->name }}</td>
                                 <td>R$ {{ number_format($conta->saldo_inicial, 2, ',', '') }}</td>
+                                <td>R$ {{ number_format($conta->saldo_atual, 2, ',', '') }}</td>
                                 <td>{{ $conta->created_at }}</td>
                                 <td style="text-align: right;">
                                   <form action="{{ route('conta.destroy',$conta->id) }}" method="POST">

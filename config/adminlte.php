@@ -190,6 +190,17 @@ return [
             'url'  => 'transacao',
             'can' => 'transacao.index'
         ],
+        [
+            'text'    => 'Relatorio',
+            'submenu' => [
+                [
+                    'text' => 'Fluxo de Caixa',
+                    'url'  => 'fluxoCaixa',
+                    //'can' => 'fluxoCaixa'
+                ],
+            ],
+            //'can' => 'relatorio'
+        ],
     ],
 
     /*

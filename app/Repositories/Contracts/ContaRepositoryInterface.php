@@ -8,7 +8,6 @@ interface ContaRepositoryInterface
     public function getByUser();
     public function getById($conta_id);
     public function list();
-    public function saldo();
     public function all();
     public function save(array $conta_data);
     public function delete($conta_id);

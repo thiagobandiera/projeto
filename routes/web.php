@@ -41,5 +41,9 @@ Route::middleware(['LogAcesso'])->group(function (){
 	/** Transação **/
 	Route::resource('transacao', 'Transacao\TransacaoController');
 
+	/** Relatorio **/
+	Route::get('fluxoCaixa', 'Relatorio\RelatorioController@fluxoCaixa')->name('fluxoCaixa');
+	Route::post('fluxoCaixaGerar', 'Relatorio\RelatorioController@fluxoCaixaGerar')->name('fluxoCaixaGerar');
+
 });
 

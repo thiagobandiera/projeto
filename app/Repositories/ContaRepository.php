@@ -29,11 +29,6 @@ class ContaRepository implements ContaRepositoryInterface
         return Conta::where('user_id', auth()->user()->id)->pluck('name', 'id');
     }
 
-    public function saldo()
-    {
-        return 1;
-    }
-
     public function all()
     {
         return Conta::all();
@@ -67,5 +62,4 @@ class ContaRepository implements ContaRepositoryInterface
 
         return $registro;
     }
-
 }
