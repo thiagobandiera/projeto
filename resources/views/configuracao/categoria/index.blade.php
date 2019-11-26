@@ -40,7 +40,7 @@
                                 @else
                                     <td>-</td>
                                 @endif
-                                <td>{{ $categoria->created_at }}</td>
+                                <td>{{ date("d/m/Y H:i:s", strtotime($categoria->created_at)) }}</td>
                                 <td style="text-align: right;">
                                   <form action="{{ route('categoria.destroy',$categoria->id) }}" method="POST">
                                     <a class="btn btn-info" href="{{ route('categoria.show',$categoria->id) }}">Visualizar</a>

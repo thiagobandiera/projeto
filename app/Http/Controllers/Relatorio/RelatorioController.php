@@ -21,7 +21,9 @@ class RelatorioController extends Controller
     public function fluxoCaixaGerar(Request $request, ContaRepositoryInterface $conta)
     {
 
-     	$conta = $conta->getById($request->conta_id);
+     	$conta = $conta->fluxoCaixa($request->conta_id);
+
+        //dd($conta->transacoes);
 
     	$pdf = PDF::loadView('relatorio.fluxoCaixaGerar', compact('conta'));
 

@@ -36,7 +36,7 @@
                             <tr>
                                 <td>{{ $permission->name }}</td>
                                 <td>{{ $permission->guard_name }}</td>
-                                <td>{{ $permission->created_at }}</td>
+                                <td>{{ date("d/m/Y H:i:s", strtotime($permission->created_at)) }}</td>
                                 <td style="text-align: right;">
                                   <form action="{{ route('permission.destroy',$permission->id) }}" method="POST">
                                     <a class="btn btn-info" href="{{ route('permission.show',$permission->id) }}">Visualizar</a>

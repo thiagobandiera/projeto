@@ -62,4 +62,15 @@ class ContaRepository implements ContaRepositoryInterface
 
         return $registro;
     }
+
+    public function fluxoCaixa($conta_id)
+    {
+        $conta = Conta::where('id',$conta_id)
+                        ->with(array('transacoes' => function($query){
+                            $query->orderBy('data');
+                        }))
+                        ->first();
+
+        return $conta;
+    }
 }

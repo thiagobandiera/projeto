@@ -38,7 +38,7 @@
                                 <td>{{ $conta->name }}</td>
                                 <td>R$ {{ number_format($conta->saldo_inicial, 2, ',', '') }}</td>
                                 <td>R$ {{ number_format($conta->saldo_atual, 2, ',', '') }}</td>
-                                <td>{{ $conta->created_at }}</td>
+                                <td>{{ date("d/m/Y H:i:s", strtotime($conta->created_at)) }}</td>
                                 <td style="text-align: right;">
                                   <form action="{{ route('conta.destroy',$conta->id) }}" method="POST">
                                     <a class="btn btn-info" href="{{ route('conta.show',$conta->id) }}">Visualizar</a>

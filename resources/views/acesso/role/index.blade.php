@@ -36,7 +36,7 @@
                             <tr>
                                 <td>{{ $role->name }}</td>
                                 <td>{{ $role->guard_name }}</td>
-                                <td>{{ $role->created_at }}</td>
+                                <td>{{ date("d/m/Y H:i:s", strtotime($role->created_at)) }}</td>
                                 <td style="text-align: right;">
                                   <form action="{{ route('role.destroy',$role->id) }}" method="POST">
                                     <a class="btn btn-info" href="{{ route('role.show',$role->id) }}">Visualizar</a>

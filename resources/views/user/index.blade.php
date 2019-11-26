@@ -45,7 +45,7 @@
                                     @endforeach
                                   @endif
                                 </td>
-                                <td>{{ $user->created_at }}</td>
+                                <td>{{ date("d/m/Y", strtotime($user->created_at)) }}</td>
                                 <td style="text-align: right;">
                                   <form action="{{ route('user.destroy',$user->id) }}" method="POST">
                                     @can('user.show')

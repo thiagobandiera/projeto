@@ -12,6 +12,6 @@ interface ContaRepositoryInterface
     public function save(array $conta_data);
     public function delete($conta_id);
     public function update($conta_id, array $conta_data);
-
+    public function fluxoCaixa($conta_id);
 
 }

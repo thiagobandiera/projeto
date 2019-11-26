@@ -37,7 +37,7 @@
                         <tbody>
                             @foreach ($transacoes as $transacao )
                             <tr>
-                                <td>{{ $transacao->data }}</td>
+                                <td>{{ date("d/m/Y", strtotime($transacao->data)) }}</td>
 
                                 <td>{{ $transacao->descricao }}</td>
 

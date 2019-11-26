@@ -135,52 +135,60 @@ return [
         ['header' => 'main_navigation'],
         [
             'text'    => 'Informações Pessoal',
+            'icon' => 'fas fa-user-circle',
             'submenu' => [
                 [
                     'text' => 'profile',
                     'url'  => 'profile',
-                    'icon' => 'fas fa-fw fa-user',
+                    'icon' => 'fas fa-id-card',
                 ],
                 [
                     'text' => 'change_password',
                     'url'  => 'password',
-                    'icon' => 'fas fa-fw fa-lock',
+                    'icon' => 'fas fa-lock',
                 ],
             ],
         ],
         [
             'text'    => 'Sistema',
+            'icon' => 'fas fa-server',
             'submenu' => [
                 [
                     'text' => 'Usuarios',
                     'url'  => 'user',
-                    'can' => 'user.index'
+                    'can' => 'user.index',
+                    'icon' => 'fas fa-users-cog',
                 ],
                 [
                     'text' => 'Perfil',
                     'url'  => 'role',
-                    'can' => 'role.index'
+                    'can' => 'role.index',
+                    'icon' => 'fas fa-user',
                 ],
                 [
                     'text' => 'Permissão',
                     'url'  => 'permission',
-                    'can' => 'permission.index'
+                    'can' => 'permission.index',
+                    'icon' => 'fas fa-user-check',
                 ]
             ],
             'can' => 'sistema'
         ],
         [
             'text'    => 'Configurações',
+            'icon' => 'fas fa-cog',
             'submenu' => [
                 [
                     'text' => 'Conta',
                     'url'  => 'conta',
-                    'can' => 'conta.index'
+                    'can' => 'conta.index',
+                    'icon' => 'fas fa-university',
                 ],
                 [
                     'text' => 'Categorias',
                     'url'  => 'categoria',
-                    'can' => 'categoria.index'
+                    'can' => 'categoria.index',
+                    'icon' => 'fas fa-list-ul',
                 ],
             ],
             'can' => 'configuracao'
@@ -188,14 +196,17 @@ return [
         [
             'text' => 'Transações',
             'url'  => 'transacao',
-            'can' => 'transacao.index'
+            'can' => 'transacao.index',
+            'icon' => 'fas fa-random',
         ],
         [
             'text'    => 'Relatorio',
+            'icon' => 'fas fa-chart-bar',
             'submenu' => [
                 [
                     'text' => 'Fluxo de Caixa',
                     'url'  => 'fluxoCaixa',
+                    'icon' => 'fas fa-file-alt',
                     //'can' => 'fluxoCaixa'
                 ],
             ],
