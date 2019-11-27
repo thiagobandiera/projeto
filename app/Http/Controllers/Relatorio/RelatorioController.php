@@ -9,6 +9,8 @@ use App\Repositories\Contracts\ContaRepositoryInterface;
 
 use PDF;
 
+use Excel;
+
 class RelatorioController extends Controller
 {
     public function fluxoCaixa(ContaRepositoryInterface $conta)
@@ -25,8 +27,11 @@ class RelatorioController extends Controller
 
         //dd($conta->transacoes);
 
-    	$pdf = PDF::loadView('relatorio.fluxoCaixaGerar', compact('conta'));
+    	//$pdf = PDF::loadView('relatorio.fluxoCaixaGerar', compact('conta'));
+    	//return $pdf->setPaper('A4')->stream('fluxo_caixa_pdf');
 
-    	return $pdf->setPaper('A4')->stream('fluxo_caixa_pdf');
+
     }
+
+
 }
