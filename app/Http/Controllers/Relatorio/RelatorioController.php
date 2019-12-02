@@ -5,32 +5,48 @@ namespace App\Http\Controllers\Relatorio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Repositories\Contracts\ContaRepositoryInterface;
+use App\Repositories\ContaRepository;
 
 use PDF;
 
-use Excel;
+use App\Exports\RelatoriosExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RelatorioController extends Controller
 {
-    public function fluxoCaixa(ContaRepositoryInterface $conta)
+    public function fluxoCaixa()
     {
-    	$contas = $conta->list();
+        $Contarepository = new ContaRepository;
+    	$contas = $Contarepository->list();
 
     	return view('relatorio.fluxoCaixa', compact('contas'));
     }
 
-    public function fluxoCaixaGerar(Request $request, ContaRepositoryInterface $conta)
+    public function fluxoCaixaGerar(Request $request)
     {
+        switch ($request->formato) {
+            case 'PDF':
+                return $this->pdf($request->conta_id);
+                break;
+            case 'Excel':
+                return $this->excel();
+                break;
+        }
+    }
 
-     	$conta = $conta->fluxoCaixa($request->conta_id);
+    public function pdf($id_conta)
+    {
+        $Contarepository = new ContaRepository;
 
-        //dd($conta->transacoes);
+        $conta = $Contarepository->fluxoCaixa($id_conta);
 
-    	//$pdf = PDF::loadView('relatorio.fluxoCaixaGerar', compact('conta'));
-    	//return $pdf->setPaper('A4')->stream('fluxo_caixa_pdf');
+        $pdf = PDF::loadView('relatorio.fluxoCaixaPDF', compact('conta'));
+        return $pdf->setPaper('A4')->stream('fluxo_caixa_pdf');
+    }
 
-
+    public function excel()
+    {
+        return Excel::download(new RelatoriosExport, 'relatorios.xlsx');
     }
 
 

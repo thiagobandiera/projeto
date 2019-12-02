@@ -23,10 +23,16 @@
 	            	{!! csrf_field() !!}
 	              	<div class="box-body">
 	              		<div class="row">
-	                        <div class="col-md-12">
+	                        <div class="col-md-6">
 	                          <div class="form-group">
 	                            <label>Conta</label>
 	                            {{ Form::select('conta_id', $contas, null, ['class' => 'form-control', 'placeholder' => 'Selecione']) }}
+	                          </div>
+	                        </div>
+	                        <div class="col-md-6">
+	                          <div class="form-group">
+	                            <label>Formato</label>
+	                            {{ Form::select('formato', [ 'PDF' => 'PDF', 'Excel' =>'Excel'], null, ['class' => 'form-control', 'placeholder' => 'Selecione']) }}
 	                          </div>
 	                        </div>
 	                    </div>
